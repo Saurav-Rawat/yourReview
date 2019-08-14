@@ -1,0 +1,16 @@
+{
+  "name": "yourreview",
+  "version": "1.0.0",
+  "description": "app to know about the hot place to hangout near you.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "saurav rawat\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[R\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[S",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}
