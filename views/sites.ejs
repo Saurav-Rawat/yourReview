@@ -1,32 +1,42 @@
 <%include partials/header%>
 <div class='container '>
-	<header class='jumbotron'>	
+	<header class='jumbotron'>
 		<center>
 			<h1>Available sites</h1>
 			<p>view the trending places near you..!!</p>
 		</center>
 	</header>
+	<%	if(sites.length == 0) {	%>
+	<center>
+
+		<img class="card-img-top"
+			src='https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png'
+			style='height:200px; width:200px' />
+
+	</center>
+	<%} %>
 	<div class='row d-flex align-content-start flex-wrap'>
 		<%	for(var i=0; i< sites.length; i++){	%>
-				<div class='col-sm'>	
-					<div class="card" style="width: 18rem;">
-						<img class="card-img-top" src=<%=sites[i].image%> style='.img-thumbnail{height:200px width:200px}'	/>
-						<div class="card-body">
+		<div class='col-sm'>
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src=<%=sites[i].imageLoc%> style='.img-thumbnail{height:200px width:200px}' />
+				<div class="card-body">
 
-						<h5 class="card-title">	<%= sites[i].title	%>	</h5>
-							<p class='card-text'><%=sites[i].description%>
-							</p>
-							<a class='btn btn-primary' href='#'>Know more</a>
-						</div>	
-					</div>			
-
+					<h5 class="card-title"> <%= sites[i].title	%> </h5>
+					<p class='card-text'><%=sites[i].description%>
+					</p>
+					<a class='btn btn-primary' href='#'>Know more</a>
 				</div>
+			</div>
+
+		</div>
 		<%}%>
 	</div>
 	<center>
+		<h1>Upload Your Site</h1>
 	<form class='form-group' action='/addsite' method='post'>
 	<input class='form-control'	type='text' name='title' placeholder='name of the site'/>
-	<input	class='form-control' type='text' name='image' placeholder='Link of the image'/>
+	<input	class='form-control' type='text' name='imageLoc' placeholder='Link of the image'/>
 	<input	class='form-control' type='text' name='description' placeholder='Extra description about the site'/>
 	<button class='btn btn-primary btn-block'>Submit</button>
 
