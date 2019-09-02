@@ -53,6 +53,11 @@ app.get('/sites', function (req, res) {
 	})
 });
 
+app.get('/sites/:id',function(req,res){
+
+		res.send("this will be show page");
+});
+
 app.post('/addsite', function (req, res) {
 	//  console.log(req.body)
 	// var titleA= req.body.title;
@@ -77,7 +82,6 @@ app.post('/addsite', function (req, res) {
 			res.redirect('sites');
 		}
 	})
-
 });
 
 //listening port
