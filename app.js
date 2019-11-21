@@ -58,17 +58,11 @@ app.get('/sites/:id',function(req,res){
 		res.send("this will be show page");
 });
 
+app.get('/upload',function(req,res){
+	res.render('upload');
+});
+
 app.post('/addsite', function (req, res) {
-	//  console.log(req.body)
-	// var titleA= req.body.title;
-	// var imageA= req.body.image;
-	// var descriptionA=req.body.description;
-	// var add={
-	// 			title:titleA,
-	// 			image:imageA,
-	// 			description:descriptionA
-	// 		};
-	//  sites.push(add);
 	let Site = new siteSchema()
 	_.each(req.body, (value, key) => {
 		Site[key] = value
